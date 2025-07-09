@@ -176,6 +176,10 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
 };
 
+void oneshot_mods_changed_user(uint8_t mods) {
+  STATUS_LED_4((mods & MOD_MASK_SHIFT) != 0);
+}
+
 void set_layer_color(int layer) {
   for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
     HSV hsv = {
