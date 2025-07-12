@@ -181,6 +181,14 @@ void oneshot_mods_changed_user(uint8_t mods) {
   STATUS_LED_4((mods & MOD_MASK_SHIFT) != 0);
 }
 
+void caps_word_set_user(bool active) {
+    if (active) {
+        STATUS_LED_4(true);
+    } else {
+        STATUS_LED_4(false);
+    }
+}
+
 void set_layer_color(int layer) {
   for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
     HSV hsv = {
