@@ -20,6 +20,12 @@ enum custom_keycodes {
   ST_MACRO_3,
   ST_MACRO_4,
   ST_MACRO_5,
+  ST_MACRO_6,
+  ST_MACRO_7,
+  ST_MACRO_8,
+  ST_MACRO_9,
+  ST_MACRO_10,
+  ST_MACRO_11,
   MAC_MISSION_CONTROL,
   MAC_SIRI,
   MAC_DND,
@@ -50,19 +56,19 @@ enum tap_dance_codes {
   DANCE_18,
 };
 
-#define DUAL_FUNC_0 LT(6, KC_F16)
-#define DUAL_FUNC_1 LT(15, KC_F2)
-#define DUAL_FUNC_2 LT(4, KC_F19)
-#define DUAL_FUNC_3 LT(15, KC_S)
-#define DUAL_FUNC_4 LT(2, KC_F12)
-#define DUAL_FUNC_5 LT(2, KC_F17)
-#define DUAL_FUNC_6 LT(10, KC_E)
-#define DUAL_FUNC_7 LT(7, KC_F3)
-#define DUAL_FUNC_8 LT(4, KC_D)
-#define DUAL_FUNC_9 LT(15, KC_A)
-#define DUAL_FUNC_10 LT(2, KC_2)
-#define DUAL_FUNC_11 LT(12, KC_F11)
-#define DUAL_FUNC_12 LT(15, KC_G)
+#define DUAL_FUNC_0 LT(4, KC_V)
+#define DUAL_FUNC_1 LT(1, KC_0)
+#define DUAL_FUNC_2 LT(4, KC_F5)
+#define DUAL_FUNC_3 LT(9, KC_1)
+#define DUAL_FUNC_4 LT(3, KC_1)
+#define DUAL_FUNC_5 LT(11, KC_F7)
+#define DUAL_FUNC_6 LT(10, KC_S)
+#define DUAL_FUNC_7 LT(11, KC_F18)
+#define DUAL_FUNC_8 LT(12, KC_F19)
+#define DUAL_FUNC_9 LT(8, KC_U)
+#define DUAL_FUNC_10 LT(9, KC_F4)
+#define DUAL_FUNC_11 LT(3, KC_8)
+#define DUAL_FUNC_12 LT(2, KC_F6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -139,9 +145,21 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 
 const uint16_t PROGMEM combo0[] = { OSL(1), TT(2), COMBO_END};
+const uint16_t PROGMEM combo1[] = { OSL(1), MT(MOD_RGUI, KC_N), COMBO_END};
+const uint16_t PROGMEM combo2[] = { OSL(1), MT(MOD_RSFT, KC_E), COMBO_END};
+const uint16_t PROGMEM combo3[] = { OSL(1), MT(MOD_RALT, KC_I), COMBO_END};
+const uint16_t PROGMEM combo4[] = { OSL(1), MT(MOD_RCTL, KC_O), COMBO_END};
+const uint16_t PROGMEM combo5[] = { OSL(1), KC_U, COMBO_END};
+const uint16_t PROGMEM combo6[] = { OSL(1), MT(MOD_LCTL, KC_A), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TO(3)),
+    COMBO(combo1, ST_MACRO_6),
+    COMBO(combo2, ST_MACRO_7),
+    COMBO(combo3, ST_MACRO_8),
+    COMBO(combo4, ST_MACRO_9),
+    COMBO(combo5, ST_MACRO_10),
+    COMBO(combo6, ST_MACRO_11),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -282,6 +300,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_5:
     if (record->event.pressed) {
       SEND_STRING(SS_TAP(X_0)SS_DELAY(100)  SS_TAP(X_MINUS)SS_DELAY(100)  SS_TAP(X_0));
+    }
+    break;
+    case ST_MACRO_6:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_N))SS_DELAY(100)  SS_TAP(X_N));
+    }
+    break;
+    case ST_MACRO_7:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_E))SS_DELAY(100)  SS_TAP(X_E));
+    }
+    break;
+    case ST_MACRO_8:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_E))SS_DELAY(100)  SS_TAP(X_I));
+    }
+    break;
+    case ST_MACRO_9:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_E))SS_DELAY(100)  SS_TAP(X_O));
+    }
+    break;
+    case ST_MACRO_10:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_E))SS_DELAY(100)  SS_TAP(X_U));
+    }
+    break;
+    case ST_MACRO_11:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LALT(SS_TAP(X_E))SS_DELAY(100)  SS_TAP(X_A));
     }
     break;
     case ORYX_SL_TOGG:
