@@ -57,20 +57,20 @@ enum tap_dance_codes {
   DANCE_19,
 };
 
-#define DUAL_FUNC_0 LT(11, KC_F14)
-#define DUAL_FUNC_1 LT(13, KC_F16)
-#define DUAL_FUNC_2 LT(5, KC_F7)
-#define DUAL_FUNC_3 LT(6, KC_7)
-#define DUAL_FUNC_4 LT(7, KC_H)
-#define DUAL_FUNC_5 LT(2, KC_F24)
-#define DUAL_FUNC_6 LT(3, KC_S)
-#define DUAL_FUNC_7 LT(12, KC_J)
-#define DUAL_FUNC_8 LT(2, KC_F17)
-#define DUAL_FUNC_9 LT(14, KC_U)
-#define DUAL_FUNC_10 LT(8, KC_9)
-#define DUAL_FUNC_11 LT(7, KC_P)
-#define DUAL_FUNC_12 LT(13, KC_H)
-#define DUAL_FUNC_13 LT(13, KC_F)
+#define DUAL_FUNC_0 LT(3, KC_6)
+#define DUAL_FUNC_1 LT(6, KC_F8)
+#define DUAL_FUNC_2 LT(7, KC_9)
+#define DUAL_FUNC_3 LT(8, KC_G)
+#define DUAL_FUNC_4 LT(14, KC_R)
+#define DUAL_FUNC_5 LT(1, KC_P)
+#define DUAL_FUNC_6 LT(10, KC_0)
+#define DUAL_FUNC_7 LT(2, KC_2)
+#define DUAL_FUNC_8 LT(13, KC_K)
+#define DUAL_FUNC_9 LT(6, KC_O)
+#define DUAL_FUNC_10 LT(10, KC_F9)
+#define DUAL_FUNC_11 LT(1, KC_0)
+#define DUAL_FUNC_12 LT(11, KC_9)
+#define DUAL_FUNC_13 LT(4, KC_A)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -123,11 +123,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     RGUI(RSFT(KC_SPACE)),RGUI(RSFT(KC_H)),                                TO(0),          RGUI(KC_N)
   ),
   [7] = LAYOUT_voyager(
-    TD(DANCE_19),   KC_1,           DUAL_FUNC_10,   DUAL_FUNC_11,   KC_4,           KC_5,                                           KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_TRANSPARENT, 
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           DUAL_FUNC_12,                                   KC_Y,           KC_TRANSPARENT, KC_UP,          KC_O,           KC_P,           KC_TRANSPARENT, 
-    KC_LEFT_SHIFT,  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_TRANSPARENT, KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_SCLN,        KC_TRANSPARENT, 
-    KC_LEFT_ALT,    KC_Z,           KC_X,           KC_C,           DUAL_FUNC_13,   KC_B,                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                    KC_SPACE,       KC_LEFT_CTRL,                                   TO(0),          KC_TRANSPARENT
+    TD(DANCE_19),   KC_1,           DUAL_FUNC_10,   DUAL_FUNC_11,   KC_4,           KC_5,                                           KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_DELETE,      
+    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           DUAL_FUNC_12,                                   KC_Y,           KC_L,           KC_UP,          KC_O,           KC_P,           KC_BSPC,        
+    OSM(MOD_LSFT),  KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_M,           KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_SCLN,        KC_ENTER,       
+    OSM(MOD_LALT),  KC_Z,           KC_X,           KC_C,           DUAL_FUNC_13,   KC_B,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_TRANSPARENT, 
+                                                    KC_SPACE,       OSM(MOD_LCTL),                                  TO(0),          KC_SPACE
   ),
   [8] = LAYOUT_voyager(
     KC_NO,          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
@@ -172,10 +172,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -50;
         case TD(DANCE_3):
             return TAPPING_TERM -150;
-        case TD(DANCE_7):
-            return TAPPING_TERM -100;
         case DUAL_FUNC_3:
-            return TAPPING_TERM -100;
+            return TAPPING_TERM -200;
         default:
             return TAPPING_TERM;
     }
