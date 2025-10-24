@@ -58,20 +58,20 @@ enum tap_dance_codes {
   DANCE_20,
 };
 
-#define DUAL_FUNC_0 LT(7, KC_J)
-#define DUAL_FUNC_1 LT(4, KC_T)
-#define DUAL_FUNC_2 LT(6, KC_D)
-#define DUAL_FUNC_3 LT(13, KC_J)
-#define DUAL_FUNC_4 LT(12, KC_F9)
-#define DUAL_FUNC_5 LT(7, KC_1)
-#define DUAL_FUNC_6 LT(6, KC_Q)
-#define DUAL_FUNC_7 LT(6, KC_I)
-#define DUAL_FUNC_8 LT(10, KC_W)
-#define DUAL_FUNC_9 LT(6, KC_5)
-#define DUAL_FUNC_10 LT(15, KC_O)
-#define DUAL_FUNC_11 LT(4, KC_Y)
-#define DUAL_FUNC_12 LT(4, KC_F13)
-#define DUAL_FUNC_13 LT(12, KC_H)
+#define DUAL_FUNC_0 LT(11, KC_O)
+#define DUAL_FUNC_1 LT(4, KC_V)
+#define DUAL_FUNC_2 LT(12, KC_F2)
+#define DUAL_FUNC_3 LT(5, KC_J)
+#define DUAL_FUNC_4 LT(10, KC_F9)
+#define DUAL_FUNC_5 LT(13, KC_F9)
+#define DUAL_FUNC_6 LT(1, KC_0)
+#define DUAL_FUNC_7 LT(3, KC_L)
+#define DUAL_FUNC_8 LT(6, KC_4)
+#define DUAL_FUNC_9 LT(15, KC_4)
+#define DUAL_FUNC_10 LT(13, KC_3)
+#define DUAL_FUNC_11 LT(3, KC_O)
+#define DUAL_FUNC_12 LT(3, KC_F19)
+#define DUAL_FUNC_13 LT(15, KC_F3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [6] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
     KC_UP,          LCTL(LSFT(KC_TAB)),LCTL(KC_PAGE_UP),LCTL(KC_PGDN),  LCTL(KC_TAB),   KC_NO,                                          KC_NO,          RGUI(RSFT(KC_Y)),RGUI(KC_U),     RALT(RGUI(KC_DOT)),RCTL(KC_0),     LGUI(KC_LBRC),  
-    KC_DOWN,        LCTL(KC_4),     LGUI(LSFT(KC_M)),LGUI(LSFT(KC_K)),LCTL(KC_KP_1),  LGUI(KC_G),                                     LGUI(KC_F),     LGUI(LSFT(KC_A)),LGUI(LSFT(KC_T)),RGUI(RSFT(KC_L)),RGUI(KC_K),     KC_TRANSPARENT, 
+    KC_DOWN,        LCTL(KC_4),     LGUI(LSFT(KC_M)),LGUI(LSFT(KC_K)),LCTL(KC_KP_1),  LGUI(KC_G),                                     LGUI(KC_F),     LGUI(LSFT(KC_A)),LGUI(LSFT(KC_T)),RGUI(RSFT(KC_L)),RGUI(KC_K),     LGUI(KC_RBRC),  
     KC_NO,          LALT(LSFT(KC_UP)),RGUI(RCTL(KC_LEFT)),RGUI(RCTL(KC_RIGHT)),LALT(LSFT(KC_DOWN)),KC_NO,                                          KC_NO,          RGUI(RSFT(KC_D)),RGUI(KC_COMMA), RGUI(RSFT(KC_I)),RGUI(RSFT(KC_E)),KC_NO,          
                                                     RGUI(RSFT(KC_SPACE)),RGUI(RSFT(KC_H)),                                TO(0),          RGUI(KC_N)
   ),
@@ -156,6 +156,7 @@ const uint16_t PROGMEM combo5[] = { OSL(1), KC_U, COMBO_END};
 const uint16_t PROGMEM combo6[] = { OSL(1), MT(MOD_LCTL, KC_A), COMBO_END};
 const uint16_t PROGMEM combo7[] = { TT(2), MT(MOD_LSFT, KC_S), COMBO_END};
 const uint16_t PROGMEM combo8[] = { TT(2), MT(MOD_LGUI, KC_T), COMBO_END};
+const uint16_t PROGMEM combo9[] = { TT(2), MEH_T(KC_G), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TO(3)),
@@ -167,6 +168,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo6, ST_MACRO_11),
     COMBO(combo7, TO(6)),
     COMBO(combo8, TO(5)),
+    COMBO(combo9, TO(7)),
 };
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
