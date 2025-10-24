@@ -18,14 +18,20 @@
 #undef MOUSEKEY_WHEEL_DELAY
 #define MOUSEKEY_WHEEL_DELAY 200
 
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED 5
+
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX 45
+
 #undef MOUSEKEY_WHEEL_INTERVAL
-#define MOUSEKEY_WHEEL_INTERVAL 40
+#define MOUSEKEY_WHEEL_INTERVAL 50
 
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 6
 
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/Lvp30R"
+#define SERIAL_NUMBER "ZZBNz/KrY3X9"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 8
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
