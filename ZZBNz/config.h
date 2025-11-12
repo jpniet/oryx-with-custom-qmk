@@ -4,7 +4,7 @@
 #define TAPPING_TERM 350
 
 #undef ONESHOT_TIMEOUT
-#define ONESHOT_TIMEOUT 3000
+#define ONESHOT_TIMEOUT 2000
 
 #define PERMISSIVE_HOLD
 
@@ -34,7 +34,7 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 6
 
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/Azd0QB"
+#define SERIAL_NUMBER "ZZBNz/B4RRz0"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 10
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
