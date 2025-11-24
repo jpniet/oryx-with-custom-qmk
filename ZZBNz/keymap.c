@@ -57,26 +57,26 @@ enum tap_dance_codes {
   DANCE_19,
 };
 
-#define DUAL_FUNC_0 LT(14, KC_F)
-#define DUAL_FUNC_1 LT(10, KC_F6)
-#define DUAL_FUNC_2 LT(10, KC_F4)
-#define DUAL_FUNC_3 LT(12, KC_F6)
-#define DUAL_FUNC_4 LT(3, KC_P)
-#define DUAL_FUNC_5 LT(2, KC_0)
-#define DUAL_FUNC_6 LT(15, KC_3)
-#define DUAL_FUNC_7 LT(9, KC_B)
-#define DUAL_FUNC_8 LT(3, KC_F1)
-#define DUAL_FUNC_9 LT(15, KC_5)
-#define DUAL_FUNC_10 LT(12, KC_Z)
-#define DUAL_FUNC_11 LT(12, KC_T)
-#define DUAL_FUNC_12 LT(6, KC_1)
-#define DUAL_FUNC_13 LT(14, KC_F23)
-#define DUAL_FUNC_14 LT(5, KC_4)
-#define DUAL_FUNC_15 LT(15, KC_8)
-#define DUAL_FUNC_16 LT(13, KC_F12)
-#define DUAL_FUNC_17 LT(15, KC_F24)
-#define DUAL_FUNC_18 LT(13, KC_Y)
-#define DUAL_FUNC_19 LT(7, KC_S)
+#define DUAL_FUNC_0 LT(7, KC_F15)
+#define DUAL_FUNC_1 LT(14, KC_0)
+#define DUAL_FUNC_2 LT(4, KC_F12)
+#define DUAL_FUNC_3 LT(9, KC_F19)
+#define DUAL_FUNC_4 LT(1, KC_F5)
+#define DUAL_FUNC_5 LT(12, KC_V)
+#define DUAL_FUNC_6 LT(13, KC_F16)
+#define DUAL_FUNC_7 LT(6, KC_F4)
+#define DUAL_FUNC_8 LT(3, KC_D)
+#define DUAL_FUNC_9 LT(9, KC_I)
+#define DUAL_FUNC_10 LT(4, KC_F19)
+#define DUAL_FUNC_11 LT(1, KC_0)
+#define DUAL_FUNC_12 LT(10, KC_F21)
+#define DUAL_FUNC_13 LT(11, KC_W)
+#define DUAL_FUNC_14 LT(4, KC_W)
+#define DUAL_FUNC_15 LT(13, KC_U)
+#define DUAL_FUNC_16 LT(7, KC_B)
+#define DUAL_FUNC_17 LT(15, KC_F10)
+#define DUAL_FUNC_18 LT(13, KC_5)
+#define DUAL_FUNC_19 LT(14, KC_3)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -187,13 +187,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case TD(DANCE_5):
             return TAPPING_TERM -150;
         case DUAL_FUNC_0:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -200;
         case DUAL_FUNC_1:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -200;
         case DUAL_FUNC_2:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -200;
         case DUAL_FUNC_3:
-            return TAPPING_TERM -150;
+            return TAPPING_TERM -200;
         case TD(DANCE_8):
             return TAPPING_TERM -150;
         case DUAL_FUNC_6:
@@ -496,8 +496,7 @@ void dance_3_finished(tap_dance_state_t *state, void *user_data) {
     dance_state[3].step = dance_step(state);
     switch (dance_state[3].step) {
         case SINGLE_TAP: register_code16(KC_DELETE); break;
-        case DOUBLE_TAP: register_code16(KC_DELETE); register_code16(KC_DELETE); break;
-        case DOUBLE_HOLD: register_code16(RALT(KC_DELETE)); break;
+        case DOUBLE_TAP: register_code16(LALT(KC_DELETE)); break;
         case DOUBLE_SINGLE_TAP: tap_code16(KC_DELETE); register_code16(KC_DELETE);
     }
 }
@@ -506,8 +505,7 @@ void dance_3_reset(tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[3].step) {
         case SINGLE_TAP: unregister_code16(KC_DELETE); break;
-        case DOUBLE_TAP: unregister_code16(KC_DELETE); break;
-        case DOUBLE_HOLD: unregister_code16(RALT(KC_DELETE)); break;
+        case DOUBLE_TAP: unregister_code16(LALT(KC_DELETE)); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(KC_DELETE); break;
     }
     dance_state[3].step = 0;
