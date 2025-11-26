@@ -57,27 +57,27 @@ enum tap_dance_codes {
   DANCE_19,
 };
 
-#define DUAL_FUNC_0 LT(12, KC_F19)
-#define DUAL_FUNC_1 LT(11, KC_F23)
-#define DUAL_FUNC_2 LT(9, KC_F21)
-#define DUAL_FUNC_3 LT(2, KC_5)
-#define DUAL_FUNC_4 LT(10, KC_7)
-#define DUAL_FUNC_5 LT(3, KC_S)
-#define DUAL_FUNC_6 LT(3, KC_T)
-#define DUAL_FUNC_7 LT(3, KC_F6)
-#define DUAL_FUNC_8 LT(12, KC_W)
-#define DUAL_FUNC_9 LT(11, KC_F13)
-#define DUAL_FUNC_10 LT(11, KC_F20)
-#define DUAL_FUNC_11 LT(5, KC_6)
-#define DUAL_FUNC_12 LT(3, KC_I)
-#define DUAL_FUNC_13 LT(4, KC_F20)
-#define DUAL_FUNC_14 LT(10, KC_F20)
-#define DUAL_FUNC_15 LT(12, KC_F3)
-#define DUAL_FUNC_16 LT(1, KC_F21)
-#define DUAL_FUNC_17 LT(11, KC_S)
-#define DUAL_FUNC_18 LT(6, KC_P)
-#define DUAL_FUNC_19 LT(6, KC_9)
-#define DUAL_FUNC_20 LT(5, KC_W)
+#define DUAL_FUNC_0 LT(13, KC_8)
+#define DUAL_FUNC_1 LT(15, KC_F23)
+#define DUAL_FUNC_2 LT(1, KC_F14)
+#define DUAL_FUNC_3 LT(6, KC_F5)
+#define DUAL_FUNC_4 LT(4, KC_0)
+#define DUAL_FUNC_5 LT(2, KC_0)
+#define DUAL_FUNC_6 LT(14, KC_I)
+#define DUAL_FUNC_7 LT(15, KC_F1)
+#define DUAL_FUNC_8 LT(1, KC_F6)
+#define DUAL_FUNC_9 LT(15, KC_K)
+#define DUAL_FUNC_10 LT(6, KC_6)
+#define DUAL_FUNC_11 LT(11, KC_F24)
+#define DUAL_FUNC_12 LT(9, KC_F11)
+#define DUAL_FUNC_13 LT(9, KC_D)
+#define DUAL_FUNC_14 LT(14, KC_M)
+#define DUAL_FUNC_15 LT(5, KC_L)
+#define DUAL_FUNC_16 LT(6, KC_F1)
+#define DUAL_FUNC_17 LT(11, KC_F10)
+#define DUAL_FUNC_18 LT(6, KC_F24)
+#define DUAL_FUNC_19 LT(8, KC_F8)
+#define DUAL_FUNC_20 LT(15, KC_A)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -1092,7 +1092,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_3:
     if (record->event.pressed) {
-      SEND_STRING(SS_LSFT(SS_TAP(X_A))SS_DELAY(100)  SS_TAP(X_BSPC));
+      SEND_STRING(SS_LSFT(SS_TAP(X_DOWN))SS_DELAY(100)  SS_TAP(X_BSPC));
     }
     break;
     case ST_MACRO_4:
