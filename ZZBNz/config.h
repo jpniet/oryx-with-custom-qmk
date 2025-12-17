@@ -34,9 +34,9 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 6
 
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/EeoQxA"
+#define SERIAL_NUMBER "ZZBNz/Rj7pEx"
 #define LAYER_STATE_16BIT
-#define COMBO_COUNT 11
+#define COMBO_COUNT 12
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
