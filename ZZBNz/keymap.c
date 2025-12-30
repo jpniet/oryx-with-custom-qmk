@@ -32,6 +32,12 @@ enum custom_keycodes {
   MAC_SIRI,
   MAC_DND,
   MAC_LOCK,
+  DRAG_SCROLL,
+  TOGGLE_SCROLL,
+  NAVIGATOR_INC_CPI,
+  NAVIGATOR_DEC_CPI,
+  NAVIGATOR_TURBO,
+  NAVIGATOR_AIM
 };
 
 
@@ -59,29 +65,29 @@ enum tap_dance_codes {
   DANCE_19,
 };
 
-#define DUAL_FUNC_0 LT(12, KC_H)
-#define DUAL_FUNC_1 LT(3, KC_I)
-#define DUAL_FUNC_2 LT(2, KC_J)
-#define DUAL_FUNC_3 LT(4, KC_F24)
-#define DUAL_FUNC_4 LT(1, KC_F20)
-#define DUAL_FUNC_5 LT(6, KC_F18)
-#define DUAL_FUNC_6 LT(14, KC_1)
-#define DUAL_FUNC_7 LT(14, KC_Z)
-#define DUAL_FUNC_8 LT(8, KC_F14)
-#define DUAL_FUNC_9 LT(6, KC_G)
-#define DUAL_FUNC_10 LT(15, KC_9)
-#define DUAL_FUNC_11 LT(7, KC_3)
-#define DUAL_FUNC_12 LT(5, KC_C)
-#define DUAL_FUNC_13 LT(10, KC_3)
-#define DUAL_FUNC_14 LT(12, KC_F16)
-#define DUAL_FUNC_15 LT(15, KC_2)
-#define DUAL_FUNC_16 LT(1, KC_A)
-#define DUAL_FUNC_17 LT(5, KC_K)
-#define DUAL_FUNC_18 LT(4, KC_I)
-#define DUAL_FUNC_19 LT(13, KC_1)
-#define DUAL_FUNC_20 LT(10, KC_6)
-#define DUAL_FUNC_21 LT(5, KC_5)
-#define DUAL_FUNC_22 LT(12, KC_F14)
+#define DUAL_FUNC_0 LT(10, KC_F19)
+#define DUAL_FUNC_1 LT(5, KC_F17)
+#define DUAL_FUNC_2 LT(15, KC_U)
+#define DUAL_FUNC_3 LT(5, KC_0)
+#define DUAL_FUNC_4 LT(11, KC_6)
+#define DUAL_FUNC_5 LT(1, KC_N)
+#define DUAL_FUNC_6 LT(13, KC_4)
+#define DUAL_FUNC_7 LT(8, KC_Q)
+#define DUAL_FUNC_8 LT(14, KC_F11)
+#define DUAL_FUNC_9 LT(12, KC_Z)
+#define DUAL_FUNC_10 LT(5, KC_7)
+#define DUAL_FUNC_11 LT(14, KC_F15)
+#define DUAL_FUNC_12 LT(10, KC_H)
+#define DUAL_FUNC_13 LT(5, KC_3)
+#define DUAL_FUNC_14 LT(1, KC_0)
+#define DUAL_FUNC_15 LT(7, KC_3)
+#define DUAL_FUNC_16 LT(8, KC_F16)
+#define DUAL_FUNC_17 LT(12, KC_F13)
+#define DUAL_FUNC_18 LT(8, KC_A)
+#define DUAL_FUNC_19 LT(6, KC_S)
+#define DUAL_FUNC_20 LT(7, KC_F1)
+#define DUAL_FUNC_21 LT(8, KC_F5)
+#define DUAL_FUNC_22 LT(10, KC_C)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -113,11 +119,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     OSM(MOD_MEH),   MAC_DND,                                        TO(0),          OSM(MOD_HYPR)
   ),
   [4] = LAYOUT_voyager(
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_NO,          KC_MS_WH_RIGHT, KC_MS_WH_UP,    KC_MS_WH_DOWN,  KC_MS_WH_LEFT,  KC_NO,                                          KC_NO,          KC_MS_BTN3,     KC_MS_BTN6,     KC_MS_BTN7,     KC_MS_BTN8,     KC_NO,          
-    KC_NO,          KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_UP,       KC_MS_RIGHT,    KC_NO,                                          LSFT(KC_MS_BTN1),KC_MS_BTN1,     KC_MS_BTN2,     KC_MS_BTN4,     KC_MS_BTN5,     KC_NO,          
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO,          KC_NO,          KC_NO,          
-                                                    KC_SCRL,        KC_TRANSPARENT,                                 TO(0),          KC_LEFT_GUI
+    NAVIGATOR_DEC_CPI,NAVIGATOR_INC_CPI,KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, QK_LLCK,                                        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TOGGLE_SCROLL,                                  KC_NO,          KC_MS_BTN3,     KC_MS_BTN6,     KC_MS_BTN7,     KC_MS_BTN8,     KC_NO,          
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 LSFT(KC_MS_BTN1),KC_MS_BTN1,     KC_MS_BTN2,     KC_MS_BTN4,     KC_MS_BTN5,     KC_NO,          
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 NAVIGATOR_AIM,  NAVIGATOR_TURBO,KC_MS_ACCEL2,   KC_NO,          KC_NO,          KC_NO,          
+                                                    DRAG_SCROLL,    KC_TRANSPARENT,                                 TO(0),          KC_LEFT_GUI
   ),
   [5] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT, 
@@ -222,6 +228,12 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+bool capslock_active = false;
+
+bool led_update_user(led_t led_state) {
+  capslock_active = led_state.caps_lock;
+  return true;
+}
 
 extern rgb_config_t rgb_matrix_config;
 
@@ -242,7 +254,7 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
     [3] = { {31,218,204}, {31,218,204}, {31,218,204}, {31,218,204}, {31,218,204}, {31,218,204}, {0,255,255}, {215,255,255}, {215,255,255}, {215,255,255}, {215,255,255}, {31,218,204}, {195,218,204}, {0,0,238}, {0,0,238}, {0,0,238}, {0,0,238}, {31,218,204}, {129,255,255}, {0,255,255}, {169,255,255}, {31,218,204}, {31,218,204}, {31,218,204}, {0,0,255}, {195,218,204}, {31,218,204}, {195,134,255}, {31,218,204}, {31,218,204}, {86,255,255}, {215,255,255}, {0,0,238}, {131,255,255}, {15,255,255}, {0,255,255}, {0,0,0}, {172,255,255}, {169,255,255}, {131,255,255}, {169,255,255}, {215,255,255}, {0,255,255}, {188,255,255}, {135,253,128}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {135,253,128}, {0,0,255} },
 
-    [4] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {39,218,204}, {39,218,204}, {39,218,204}, {39,218,204}, {0,0,0}, {0,0,0}, {43,255,255}, {43,255,255}, {43,255,255}, {43,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {39,218,204}, {31,218,204}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {31,218,204}, {39,218,204}, {39,218,204}, {39,218,204}, {0,0,0}, {31,240,224}, {31,218,204}, {31,218,204}, {39,218,204}, {39,218,204}, {0,0,0}, {172,255,255}, {86,255,255}, {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {135,253,128}, {31,240,224} },
+    [4] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {135,253,128}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {31,218,204}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {31,218,204}, {39,218,204}, {39,218,204}, {39,218,204}, {0,0,0}, {31,240,224}, {31,218,204}, {31,218,204}, {39,218,204}, {39,218,204}, {0,0,0}, {172,255,255}, {86,255,255}, {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {135,253,128}, {31,240,224} },
 
     [5] = { {0,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {195,218,204}, {99,169,190}, {0,0,0}, {0,0,0}, {25,255,255}, {0,0,255}, {0,0,255}, {0,255,255}, {0,0,255}, {0,0,255}, {0,0,0}, {0,0,0}, {43,255,255}, {151,255,255}, {0,0,0}, {151,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,255,255}, {0,0,0}, {33,96,200}, {99,169,190}, {0,0,0}, {0,0,0}, {0,255,255}, {0,0,255}, {169,255,255}, {34,217,255}, {0,255,255}, {126,210,165}, {0,255,255}, {0,0,0}, {151,255,255}, {43,255,255}, {0,0,0}, {0,0,0}, {0,255,255}, {135,253,128}, {151,255,255} },
 
@@ -345,9 +357,24 @@ bool rgb_matrix_indicators_user(void) {
     }
   }
 
+  if (capslock_active && biton32(layer_state) == 2) {
+    RGB rgb = hsv_to_rgb_with_value((HSV) { 86, 255, 255 });
+    rgb_matrix_set_color( 12, rgb.r, rgb.g, rgb.b );
+  } 
   return true;
 }
 
+extern bool set_scrolling;
+extern bool navigator_turbo;
+extern bool navigator_aim;
+void pointing_device_init_user(void) {
+  set_auto_mouse_enable(true);
+}
+
+bool is_mouse_record_user(uint16_t keycode, keyrecord_t* record) {
+  // All keys are not mouse keys when one shot auto mouse is enabled.
+  return false;
+}
 
 
 typedef struct {
@@ -1558,6 +1585,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
+    case DRAG_SCROLL:
+      if (record->event.pressed) {
+        set_scrolling = true;
+      } else {
+        set_scrolling = false;
+      }
+      return false;
+    case TOGGLE_SCROLL:
+      if (record->event.pressed) {
+        set_scrolling = !set_scrolling;
+      }
+      return false;
+    break;
+  case NAVIGATOR_TURBO:
+    if (record->event.pressed) {
+      navigator_turbo = true;
+    } else {
+      navigator_turbo = false;
+    }
+    return false;
+  case NAVIGATOR_AIM:
+    if (record->event.pressed) {
+      navigator_aim = true;
+    } else {
+      navigator_aim = false;
+    }
+    return false;
+  case NAVIGATOR_INC_CPI:
+    if (record->event.pressed) {
+        pointing_device_set_cpi(1);
+    }
+    return false;
+  case NAVIGATOR_DEC_CPI:
+    if (record->event.pressed) {
+        pointing_device_set_cpi(0);
+    }
+    return false;
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
