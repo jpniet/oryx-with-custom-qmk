@@ -34,19 +34,18 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 6
 
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/40q6W3"
+#define SERIAL_NUMBER "ZZBNz/dPogKn"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 11
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
 #define TAPPING_TERM_PER_KEY
-#define WHEEL_EXTENDED_SUPPORT
 #define POINTING_DEVICE_HIRES_SCROLL_ENABLE
-#define POINTING_DEVICE_HIRES_SCROLL_EXPONENT 1
-#define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE
+#define POINTING_DEVICE_HIRES_SCROLL_EXPONENT 0
 #define MOUSE_EXTENDED_REPORT
-#define NAVIGATOR_SCROLL_DIVIDER 25 
+#define WHEEL_EXTENDED_REPORT
+#define NAVIGATOR_SCROLL_DIVIDER 25
 
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
 #define AUTO_MOUSE_DEFAULT_LAYER 4
