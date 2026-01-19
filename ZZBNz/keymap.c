@@ -1641,7 +1641,9 @@ void caps_word_set_user(bool active) {
     }
 }
 
-// Caps WORD Continue
+// Caps Word Customization
+#define CAPS_WORD_INVERT_ON_SHIFT
+
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
