@@ -1643,6 +1643,8 @@ void caps_word_set_user(bool active) {
 
 // Caps Word Customization
 #ifdef CAPS_WORD_ENABLE
+#define CAPS_WORD_INVERT_ON_SHIFT
+
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
@@ -1655,6 +1657,8 @@ bool caps_word_press_user(uint16_t keycode) {
         case KC_1 ... KC_0:
         case KC_BSPC:
         case KC_DEL:
+        case TD(DANCE_3):
+        case TD(DANCE_4):
         case KC_UNDS:
         case KC_AMPR:
         case KC_SLSH:
