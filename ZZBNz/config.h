@@ -34,9 +34,9 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 6
 
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/YnPolP"
+#define SERIAL_NUMBER "ZZBNz/JaqDeW"
 #define LAYER_STATE_16BIT
-#define COMBO_COUNT 11
+#define COMBO_COUNT 12
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
@@ -48,7 +48,7 @@
 #define NAVIGATOR_SCROLL_DIVIDER 25
 
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_DEFAULT_LAYER 4
+#define AUTO_MOUSE_DEFAULT_LAYER 5
 #define AUTO_MOUSE_TIME 175
 #define AUTO_MOUSE_THRESHOLD 10
 #define AUTO_MOUSE_ONESHOT
