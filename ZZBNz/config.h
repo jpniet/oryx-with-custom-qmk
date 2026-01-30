@@ -36,7 +36,7 @@
 #define NO_AUTO_SHIFT_SPECIAL
 #define NO_AUTO_SHIFT_ALPHA
 #define CAPS_LOCK_STATUS
-#define SERIAL_NUMBER "ZZBNz/x9PJaR"
+#define SERIAL_NUMBER "ZZBNz/AzWJx0"
 #define LAYER_STATE_16BIT
 #define COMBO_COUNT 12
 #define HSS(report) host_system_send(record->event.pressed ? report : 0); return false
